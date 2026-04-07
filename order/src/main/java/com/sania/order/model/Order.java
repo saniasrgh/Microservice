@@ -13,7 +13,10 @@ public class Order {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private Long produkId;
+    private Long pelangganId;
+    private double harga;
     private int jumlah;
     private double total;
     private String tanggal;
+    private String email;
 }

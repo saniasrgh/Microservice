@@ -41,6 +41,7 @@ public class OrderService {
 
     public Order createOrder(Order order){
         order.setTanggal(LocalDateTime.now().format(formatter));
+
         Order savedOrder = orderRepository.save(order);
         System.out.println("ID dikirim: "+ savedOrder.getId());
         rabbitTemplate.convertAndSend("","order.notification.queue",savedOrder);

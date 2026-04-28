@@ -14,11 +14,15 @@ public class OrderListener {
     @Autowired
     private NotificationService notificationService;
 
+    public OrderListener(){
+    }
+
     @RabbitListener(queues = "order.notification.queue")
     public void receiveOrder(Order order){
         System.out.println("Horasss.... Order baru diterima");
         System.out.println("ID: " + order.getId());
         System.out.println("Email: " + order.getEmail());
+        System.out.println("Username: "+ order.getUsername());
         notificationService.sendEmail(order);
 
     }

@@ -8,8 +8,12 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
     public static final String QUEUE = "order.notification.queue";
 
+    public RabbitMQConfig(){
+
+    }
+
     @Bean
     public Queue queue(){
-        return new Queue(QUEUE);
+        return new Queue("order.notification.queue");
     }
 }

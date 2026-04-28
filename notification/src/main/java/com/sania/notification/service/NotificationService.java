@@ -18,7 +18,8 @@ public class NotificationService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(order.getEmail());
         message.setSubject("Order telah sukses");
-        String isiEmail = "Order sukses dibuat!\n\n"
+        String isiEmail = "Halo " + order.getUsername() + ",\n\n"
+        + "Order kamu berhasil dibuat!\n\n"
         + "ID Order: " + order.getId() + "\n"
         + "ID Produk: " + order.getProdukId() + "\n"
         + "ID Pelanggan: " + order.getPelangganId() + "\n"

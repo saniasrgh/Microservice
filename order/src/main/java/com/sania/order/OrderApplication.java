@@ -1,6 +1,6 @@
 package com.sania.order;
 
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,8 +23,7 @@ public class OrderApplication {
 	}
 
 	@Bean
-	public MessageConverter messageConverter(){
-		return new Jackson2JsonMessageConverter();
+	public MessageConverter messageConverter() {
+		return new JacksonJsonMessageConverter();
 	}
-
 }
